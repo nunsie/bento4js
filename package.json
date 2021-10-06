@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["mp4", "hls", "dash", "cenc", "native", "bento4"],
+  "keywords": ["bento4", "mp4info", "mp4dump", "mp4edit", "mp4extract", "mp4encrypt", "mp4decrypt", "mp4dcfpackager", "mp4compact", "mp4fragment", "mp4split", "mp4tag", "mp4mux", "mp42aac", "mp42avc", "mp42hls", "mp42ts", "mp4-dash", "mp4-dash-clone"],
   "author": "nunsie",
   "license": "GPL-2.0",
   "repository": {
