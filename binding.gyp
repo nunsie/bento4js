@@ -24,16 +24,16 @@
       },
       "conditions": [
         ["OS=='linux'", {
-          "libraries": ["<(module_root_dir)/bento4/lib/libap4.a"]
+          "libraries": ["<(module_root_dir)/bento4/lib/linux/libap4.a"]
         }],
         ["OS=='mac'", {
-          "libraries": ["<(module_root_dir)/bento4/lib/libap4.a"]
+          "libraries": ["<(module_root_dir)/bento4/lib/mac/libap4.a"]
         }],
         ["OS=='win' and target_arch=='x64'", {
-          "libraries": ["<(module_root_dir)/bento4/win64/ap4.lib"]
+          "libraries": ["<(module_root_dir)/bento4/lib/win64/ap4.lib"]
         }],
         ["OS=='win' and target_arch=='ia32'", {
-          "libraries": ["<(module_root_dir)/bento4/win32/ap4.lib"]
+          "libraries": ["<(module_root_dir)/bento4/lib/win32/ap4.lib"]
         }]
       ]
     }

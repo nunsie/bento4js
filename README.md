@@ -39,7 +39,7 @@ const keys = {
 };
 
 const encrypted = fs.readFileSync('enc.m4s');
-mp4decrypt.decrypt(encrypted, keys).then((decrypted) => {
+mp4decrypt.decrypt(encrypted, keys).then(decrypted => {
   fs.writeFileSync('dec.mp4', decrypted);
 });
 ```
@@ -54,26 +54,26 @@ yarn test
 
 ## Roadmap
 
-| app name       | description                                                                                                                     | status |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| mp4info        | displays high level info about an MP4 file, including all tracks and codec details                                              | ❌     |
-| mp4dump        | displays the entire atom/box structure of an MP4 file                                                                           | ❌     |
-| mp4edit        | add/insert/remove/replace atom/box items of an MP4 file                                                                         | ❌     |
-| mp4extract     | extracts an atom/box from an MP4 file                                                                                           | ❌     |
-| mp4encrypt     | encrypts an MP4 file (multiple encryption schemes are supported)                                                                | ❌     |
-| mp4decrypt     | decrypts an MP4 file (multiple encryption schemes are supported)                                                                | ✅     |
-| mp4dcfpackager | encrypts a media file into an OMA DCF file                                                                                      | ❌     |
-| mp4compact     | converts ‘stsz’ tables into ‘stz2′ tables to create more compact MP4 files                                                      | ❌     |
-| mp4fragment    | creates a fragmented MP4 file from a non-fragmented one or re-fragments an already-fragmented file                              | ❌     |
-| mp4split       | splits a fragmented MP4 file into discrete files                                                                                | ❌     |
-| mp4tag         | show/edit MP4 metadata (iTunes-style and others)                                                                                | ❌     |
-| mp4mux         | multiplexes one or more elementary streams (H264, AAC) into an MP4 file                                                         | ❌     |
-| mp42aac        | extract a raw AAC elementary stream from an MP4 file                                                                            | ❌     |
-| mp42avc        | extract a raw AVC/H.264 elementary stream from an MP4 file                                                                      | ❌     |
-| mp42hls        | converts an MP4 file to an HLS (HTTP Live Streaming) presentation, including the generation of the segments and .m3u8 playlist. | ❌     |
-| mp42ts         | converts an MP4 file to an MPEG2-TS file.                                                                                       | ❌     |
-| mp4-dash       | creates an MPEG DASH output from one or more MP4 files, including encryption.                                                   | ❌     |
-| mp4-dash-clone | creates a local clone of a remote or local MPEG DASH presentation, optionally encrypting the segments as they are cloned.       | ❌     |
+| app name       | description                                                                                                                     | status | reference                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
+| mp4info        | displays high level info about an MP4 file, including all tracks and codec details                                              | ❌     | mp4info.cpp                                                                                                             |
+| mp4dump        | displays the entire atom/box structure of an MP4 file                                                                           | ❌     | mp4dump.cpp                                                                                                             |
+| mp4edit        | add/insert/remove/replace atom/box items of an MP4 file                                                                         | ❌     | mp4edit.cpp                                                                                                             |
+| mp4extract     | extracts an atom/box from an MP4 file                                                                                           | ❌     | mp4extract.cpp                                                                                                          |
+| mp4encrypt     | encrypts an MP4 file (multiple encryption schemes are supported)                                                                | ❌     | mp4encrypt.cpp                                                                                                          |
+| mp4decrypt     | decrypts an MP4 file (multiple encryption schemes are supported)                                                                | ✅     | [Mp4Decrypt.cpp](https://github.com/axiomatic-systems/Bento4/blob/master/Source/C%2B%2B/Apps/Mp4Decrypt/Mp4Decrypt.cpp) |
+| mp4dcfpackager | encrypts a media file into an OMA DCF file                                                                                      | ❌     | mp4dcfpackager.cpp                                                                                                      |
+| mp4compact     | converts ‘stsz’ tables into ‘stz2′ tables to create more compact MP4 files                                                      | ❌     | mp4compact.cpp                                                                                                          |
+| mp4fragment    | creates a fragmented MP4 file from a non-fragmented one or re-fragments an already-fragmented file                              | ❌     | mp4fragment.cpp                                                                                                         |
+| mp4split       | splits a fragmented MP4 file into discrete files                                                                                | ❌     | mp4split.cpp                                                                                                            |
+| mp4tag         | show/edit MP4 metadata (iTunes-style and others)                                                                                | ❌     | mp4tag.cpp                                                                                                              |
+| mp4mux         | multiplexes one or more elementary streams (H264, AAC) into an MP4 file                                                         | ❌     | mp4mux.cpp                                                                                                              |
+| mp42aac        | extract a raw AAC elementary stream from an MP4 file                                                                            | ❌     | mp42aac.cpp                                                                                                             |
+| mp42avc        | extract a raw AVC/H.264 elementary stream from an MP4 file                                                                      | ❌     | mp42avc.cpp                                                                                                             |
+| mp42hls        | converts an MP4 file to an HLS (HTTP Live Streaming) presentation, including the generation of the segments and .m3u8 playlist. | ❌     | mp42hls.cpp                                                                                                             |
+| mp42ts         | converts an MP4 file to an MPEG2-TS file.                                                                                       | ❌     | mp42ts.cpp                                                                                                              |
+| mp4-dash       | creates an MPEG DASH output from one or more MP4 files, including encryption.                                                   | ❌     | mp4-dash.cpp                                                                                                            |
+| mp4-dash-clone | creates a local clone of a remote or local MPEG DASH presentation, optionally encrypting the segments as they are cloned.       | ❌     | mp4-dash-clone.cpp                                                                                                      |
 
 ---
 
