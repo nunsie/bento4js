@@ -19,12 +19,26 @@ class DecryptWorker : public Napi::AsyncWorker {
 
           for (it = keys.begin(); it != keys.end(); it++) {
             unsigned char kid[16];
+            unsigned int  track_id = 0;
             unsigned char key[16];
-            AP4_ParseHex(it->first.c_str(), kid, 16);
+
+            // AP4_ParseHex(it->first.c_str(), kid, 16);
+            if (strlen(it->first.c_str()) == 32) {
+              AP4_ParseHex(it->first.c_str(), kid, 16);
+            } else {
+              track_id = (unsigned int)strtoul(it->first.c_str(), NULL, 10);
+            }
+
             AP4_ParseHex(it->second.c_str(), key, 16);
-            key_map.SetKeyForKid(kid, key, 16);
+
+            // set the key in the map
+            if (track_id) {
+                key_map.SetKey(track_id, key, 16);
+            } else {
+                key_map.SetKeyForKid(kid, key, 16);
+            }
           }
-         }
+        }
     ~DecryptWorker() {}
 
     // Executed inside the worker-thread.
@@ -96,7 +110,7 @@ Napi::Value Decrypt(const Napi::CallbackInfo& info) {
 }
 
 Napi::Object Init (Napi::Env env, Napi::Object exports) {
-  exports.Set(Napi::String::New(env, "decrypt"),
+  exports.Set(Napi::String::New(env, "mp4decrypt"),
               Napi::Function::New(env, Decrypt));
   return exports;
 }

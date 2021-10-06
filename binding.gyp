@@ -1,8 +1,8 @@
 {
   "targets": [
     {
-      "target_name": "mp4decrypt",
-      "sources": [ "mp4decrypt.cc" ],
+      "target_name": "bento4",
+      "sources": [ "src/mp4decrypt.cc" ],
       "include_dirs": [
         "<!(node -p \"require('node-addon-api').include_dir\")",
         "bento4/include"
