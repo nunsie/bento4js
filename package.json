@@ -1,20 +1,85 @@
 {
-  "name": "bento4js",
   "version": "0.0.1",
-  "description": "Native NodeJS wrapper implementing the bento4 utilities.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": ["bento4", "mp4info", "mp4dump", "mp4edit", "mp4extract", "mp4encrypt", "mp4decrypt", "mp4dcfpackager", "mp4compact", "mp4fragment", "mp4split", "mp4tag", "mp4mux", "mp42aac", "mp42avc", "mp42hls", "mp42ts", "mp4-dash", "mp4-dash-clone"],
-  "author": "nunsie",
   "license": "GPL-2.0",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "bento4js",
+  "author": "nunsie",
+  "description": "Native NodeJS wrapper implementing the bento4 utilities.",
+  "keywords": [
+    "bento4",
+    "mp4info",
+    "mp4dump",
+    "mp4edit",
+    "mp4extract",
+    "mp4encrypt",
+    "mp4decrypt",
+    "mp4dcfpackager",
+    "mp4compact",
+    "mp4fragment",
+    "mp4split",
+    "mp4tag",
+    "mp4mux",
+    "mp42aac",
+    "mp42avc",
+    "mp42hls",
+    "mp42ts",
+    "mp4-dash",
+    "mp4-dash-clone"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nunsie/bento4js.git"
   },
+  "module": "dist/bento4js.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/bento4js.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/bento4js.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.5",
+    "husky": "^7.0.2",
+    "size-limit": "^5.0.5",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
   "dependencies": {
     "bindings": "^1.5.0",
-    "node-addon-api": "^4.0.0"
+    "node-addon-api": "^4.2.0"
   }
 }

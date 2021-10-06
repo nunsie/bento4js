@@ -26,6 +26,9 @@
         ["OS=='linux'", {
           "libraries": ["<(module_root_dir)/bento4/lib/libap4.a"]
         }],
+        ["OS=='mac'", {
+          "libraries": ["<(module_root_dir)/bento4/lib/libap4.a"]
+        }],
         ["OS=='win' and target_arch=='x64'", {
           "libraries": ["<(module_root_dir)/bento4/win64/ap4.lib"]
         }],
