@@ -1,17 +1,17 @@
 {
-  "name": "mp4decrypt-buffer",
-  "version": "1.0.0",
-  "description": "Native NodeJS module to decrypt media in-memory",
+  "name": "bento4js",
+  "version": "0.0.1",
+  "description": "Native NodeJS wrapper implementing the bento4 utilities.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["mp4", "hls", "dash", "cenc", "native"],
-  "author": "ubuntuegor",
+  "keywords": ["mp4", "hls", "dash", "cenc", "native", "bento4"],
+  "author": "nunsie",
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ubuntuegor/mp4decrypt-buffer.git"
+    "url": "https://github.com/nunsie/bento4js.git"
   },
   "dependencies": {
     "bindings": "^1.5.0",
